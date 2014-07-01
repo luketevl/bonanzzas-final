@@ -19,7 +19,7 @@ class Queldorei_ShopperSettings_Block_Product_List extends Mage_Catalog_Block_Pr
     {
         $title = $this->getTitle();
         if (empty($title)) {
-            $title = 'Featured Products';
+            $title = 'Produtos em Destaque';
         }
         return $title;
     }
