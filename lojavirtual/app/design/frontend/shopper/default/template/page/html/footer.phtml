@@ -61,12 +61,12 @@ $action = Mage::app()->getFrontController()->getRequest()->getActionName();
 
             <div class="grid_3">
             <?php if ( empty($config['twitter_replace']) ) { ?>
-                <h4><?php echo $this->__('From Twitter');?></h4>
+                <h4><?php echo $this->__('Twitter');?></h4>
                 <div class="block-content">
                 <div class="twitterWidget" data-user="<?php echo $config['twitter'] ?>">
                     <div class="twitterContent">
                         <ul class="twitterList">
-                            <li>Follow us on twitter</li>
+                            <li>Siga-nos no twitter</li>
                         </ul>
                     </div>
                     <div class="clear"></div>
@@ -84,10 +84,10 @@ $action = Mage::app()->getFrontController()->getRequest()->getActionName();
                             callback		: function(){},
                             isReady			: false,
                             height			: 0,
-                            text_specify    : "<?php echo $this->__('You need to specify a username');?>",
-                            text_error      : "<?php echo $this->__('There was an error connecting to your Twitter account');?>",
-                            text_follow     : "<?php echo $this->__('Follow us');?>",
-                            text_on_twitter : "<?php echo $this->__('on Twitter');?>"
+                            text_specify    : "<?php echo $this->__('Você precisa indicar a conta do usuário');?>",
+                            text_error      : "<?php echo $this->__('Erro ao acessar o twitter. Por favor verifique a conta informada');?>",
+                            text_follow     : "<?php echo $this->__('Seguir');?>",
+                            text_on_twitter : "<?php echo $this->__('no Twitter');?>"
                         }
                     getTweets(el, utils);
                 </script>
