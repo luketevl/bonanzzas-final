@@ -1,0 +1,238 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2011 Magento Inc. (http://www.magentocommerce.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+$config = Mage::getStoreConfig('shoppersettings/social', Mage::app()->getStore()->getId());
+$appearance = Mage::getStoreConfig('shoppersettings/appearance', Mage::app()->getStore()->getId());
+$route = Mage::app()->getFrontController()->getRequest()->getRouteName();
+$action = Mage::app()->getFrontController()->getRequest()->getActionName();
+?>
+<!-- footer BOF -->
+<div class="footer-container">
+    <?php if ( !($route == 'customer' && ($action == 'login' || $action == 'forgotpassword' || $action == 'create')) ) : ?>
+    <div class="footer-banners">
+	    <?php $cms_block = Mage::getModel('cms/block')
+		    ->setStoreId( Mage::app()->getStore()->getId() )
+		    ->load('shopper_footer_banners');
+	    if($cms_block->getIsActive()) {
+		    echo $this->getLayout()->createBlock('cms/block')->setBlockId('shopper_footer_banners')->toHtml();
+	    }
+	    ?>
+    </div>
+    <div class="footer-info">
+        <div class="row clearfix facebook">
+
+            <div class="grid_3">
+            <?php if ( empty($config['facebook_replace']) ) { ?>
+                <h4><?php echo $this->__('Facebook');?></h4>
+                <div class="block-content">
+                <iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2F<?php echo $config['facebook'] ?>&amp;width=270&amp;show_faces=true&amp;colorscheme=light&amp;stream=false&amp;border_color=<?php echo urlencode(mb_strtoupper($appearance['footer_info_bg'])); ?>&amp;header=false" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                </div>
+            <?php } else {
+                $cms_block = Mage::getModel('cms/block')
+		            ->setStoreId( Mage::app()->getStore()->getId() )
+		            ->load($config['facebook_replace']);
+	            if($cms_block->getIsActive()) {
+		            echo $this->getLayout()->createBlock('cms/block')->setBlockId($config['facebook_replace'])->toHtml();
+	            }
+            } ?>
+            </div>
+
+            <div class="grid_3">
+            <?php if ( empty($config['twitter_replace']) ) { ?>
+                <h4><?php echo $this->__('From Twitter');?></h4>
+                <div class="block-content">
+                <div class="twitterWidget" data-user="<?php echo $config['twitter'] ?>">
+                    <div class="twitterContent">
+                        <ul class="twitterList">
+                            <li>Follow us on twitter</li>
+                        </ul>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                </div>
+                <script type="text/javascript">
+                    var el = {
+                            widget				: jQuery('.twitterWidget'),
+                            twitterList			: jQuery('.twitterWidget').find(".twitterList")
+                        },
+                        utils	= {
+                            username		: el.widget.data("user"),
+                            tweetNum		: parseInt(el.widget.data("num")) || 2,
+                            currentIndex	: 0,
+                            callback		: function(){},
+                            isReady			: false,
+                            height			: 0,
+                            text_specify    : "<?php echo $this->__('You need to specify a username');?>",
+                            text_error      : "<?php echo $this->__('There was an error connecting to your Twitter account');?>",
+                            text_follow     : "<?php echo $this->__('Follow us');?>",
+                            text_on_twitter : "<?php echo $this->__('on Twitter');?>"
+                        }
+                    getTweets(el, utils);
+                </script>
+            <?php } else {
+                $cms_block = Mage::getModel('cms/block')
+		            ->setStoreId( Mage::app()->getStore()->getId() )
+		            ->load($config['twitter_replace']);
+	            if($cms_block->getIsActive()) {
+		            echo $this->getLayout()->createBlock('cms/block')->setBlockId($config['twitter_replace'])->toHtml();
+	            }
+            } ?>
+            </div>
+            <div class="grid_3 information">
+	            <?php $cms_block = Mage::getModel('cms/block')
+		            ->setStoreId( Mage::app()->getStore()->getId() )
+		            ->load('shopper_footer_information');
+	            if($cms_block->getIsActive()) {
+		            echo $this->getLayout()->createBlock('cms/block')->setBlockId('shopper_footer_information')->toHtml();
+	            }
+	            ?>
+            </div>
+            <div class="grid_3">
+	            <?php $cms_block = Mage::getModel('cms/block')
+		            ->setStoreId( Mage::app()->getStore()->getId() )
+		            ->load('shopper_footer_contact');
+	            if($cms_block->getIsActive()) {
+		            echo $this->getLayout()->createBlock('cms/block')->setBlockId('shopper_footer_contact')->toHtml();
+	            }
+	            ?>
+            </div>
+
+        </div>
+    </div>
+    <?php endif; // ( !($route == 'customer' && $action == 'login') ) : ?>
+    <footer class="row clearfix">
+        <div class="grid_6">
+            <address>
+			<?php 
+			$seo = array(
+				'magento-red-furniture-set.html' => 'magentocommerce',
+				'women/selected-mari-dress.html' => 'magento themes 1.5',
+				'selected-mari-dress.html' => 'magento template',
+				'women/coats-jackets/wrap-dress-with-belt.html' => 'magento themes jewelry store',
+				'women/bags-purses/wrap-dress-with-belt.html' => 'magento design themes',
+				'women/dresses/wrap-dress-with-belt.html' => 'professional magento templates',
+				'women/wrap-dress-with-belt.html' => 'magento themes baby',
+				'wrap-dress-with-belt.html' => 'magento templates',
+				'other/zolof-the-rock-and-roll-destroyer-lol-cat-t-shirt.html' => 'magento theme amazon',
+				'zolof-the-rock-and-roll-destroyer-lol-cat-t-shirt.html' => 'magento themes bookstore',
+				'nokia-2610-phone.html' => 'magento themes html5',
+				'nine-west-women-s-lucero-pump.html' => 'magento themes professional',
+				'toshiba-satellite-a135-s4527-155-4-notebook-pc-intel-pentium-dual-core-processor-t2080-1-gb-ram-120-gb-hard-drive-supermulti-dvd-drive-vista-premium.html' => 'shopper magento theme download',
+				'sony-ericsson-w810i.html' => 'magento themes',
+				'intel-c2d-e8400-3-0ghz-retail.html' => 'magento 2 themes',
+				'women/bodycon-dress-in-animal-with-cut-out.html' => 'magento themes beauty',
+				'bodycon-dress-in-animal-with-cut-out.html' => 'magento fashion templates',
+				'akio-dresser.html' => 'magento templates fashion',
+				'women/bags-purses/midi-dress-with-belt.html' => 'magento theme framework',
+				'women/midi-dress-with-belt.html' => 'buy magento extensions',
+				'midi-dress-with-belt.html' => 'magento thems', 
+				'ecco-womens-golf-flexor-golf-shoe.html' => 'magento purchase price',
+				'women/dahlia-shift-dress-with-sequin-collar.html' => 'magento themes kids',
+				'dahlia-shift-dress-with-sequin-collar.html' => 'e commerce vs magento',
+				'apple-macbook-pro-ma464ll-a-15-4-notebook-pc-2-0-ghz-intel-core-duo-1-gb-ram-100-gb-hard-drive-superdrive.html' => 'html5 magento theme',
+				'canon-digital-rebel-xt-8mp-digital-slr-camera-with-ef-s-18-55mm-f3-5-5-6-lens-black.html' => 'magento theme html5',
+				'sony-vaio-vgn-txn27n-b-11-1-notebook-pc-171.html' => 'magento themes psd',
+				'universal-camera-charger.html' => 'themes magento',
+				'canon-powershot-a630-8mp-digital-camera-with-4x-optical-zoom.html' => 'shopper magento download',
+				'kenneth-cole-new-york-men-s-con-verge-slip-on.html' => 'buy magento themes',
+				'amd-phenom-x4-9850-black-ed-2-50ghz-retail.html' => 'magento template psd',
+				'apevia-black-x-cruiser-case-atx-mid-tower-case.html' => 'magento themes for wordpress',
+				'sony-vaio-vgn-txn27n-b-11-1-notebook-pc.html' => 'magento themes forest',
+				'argus-qc-2185-quick-click-5mp-digital-camera.html' => 'wordpress magento themes',
+				'the-get-up-kids-band-camp-pullover-hoodie.html' => 'magento design templates',
+				'30-flat-panel-tft-lcd-cinema-hd-monitor.html' => 'magento templates design',
+				'htc-touch-diamond.html' => 'magento theme',
+				'intel-core-2-extreme-qx9775-3-20ghz-retail.html' => 'magento themes 1.6',
+				'nzxt-lexa-silver-aluminum-atx-mid-tower-case.html' => 'magento themes templates',
+				'women/beauty/river-island-chelsea-girl-leopard-shirt-dress.html' => 'magento theme 2013',
+				'women/river-island-chelsea-girl-leopard-shirt-dress.html' => 'magento theme name',				
+				'river-island-chelsea-girl-leopard-shirt-dress.html' => 'price slider in magento',
+				'amd-a64-x2-3800-2-0ghz-oem.html' => 'price slider magento',
+				'the-only-children-paisley-t-shirt.html' => 'magento templates premium',
+				'ink-eater-krylon-bombear-destroyed-tee.html' => 'magento premium templates',
+				'acer-ferrari-3200-notebook-computer-pc.html' => 'magento shop price',
+				'slr-camera-tripod.html' => 'theme in magento',
+				'coalesce-functioning-on-impatience-t-shirt.html' => 'magneto ecommerce',
+				'women/beauty/a-wear-peplum-40-s-dress.html' => 'magento themes wordpress',
+				'a-wear-peplum-40-s-dress.html' => 'magento shopper theme',
+				'steven-by-steve-madden-pryme-pump.html' => 'shopper - magento theme',
+				'24-widescreen-flat-panel-lcd-monitor.html' => 'shopper theme magento',
+				'kodak-easyshare-c530-5mp-digital-camera.html' => 'shopper magento theme',
+				'19-widescreen-flat-panel-lcd-monitor.html' => 'custom magento themes',
+				'crucial-2gb-pc4200-ddr2-533mhz-memory.html' => 'premium magento templates',
+				'crucial-512mb-pc4200-ddr2-533mhz-memory.html' => 'premium magento template',				
+				'crucial-1gb-pc4200-ddr2-533mhz-memory.html' => 'magneto themes',
+				'asics-men-s-gel-kayano-xii.html' => 'magneto templates',
+				'women/accessories/shirt-dress-with-lace-top.html' => 'magento themes wine',
+				'women/shirt-dress-with-lace-top.html' => 'magento template toys',
+				'shirt-dress-with-lace-top.html' => 'magneto template',
+				'women/lipsy-bold-floral-peplum-dress.html' => 'magento theme with blog',
+				'lipsy-bold-floral-peplum-dress.html' => 'custom magento template',
+				'couch.html' => 'theme magento',
+				'microsoft-wireless-optical-mouse-5000.html' => 'magneto wordpress',
+				'microsoft-wireless-optical-mouse-5013.html' => 'magento custom template',
+				'microsoft-natural-ergonomic-keyboard-4000.html' => 'magento themes 1.7',
+				'women/skater-dress-in-leaf-print.html' => 'magento ecommerce extensions',
+				'skater-dress-in-leaf-print.html' => 'purchase magento',
+				'women/beauty/motel-strappy-back-mini-dress.html' => 'premium templates magento',
+				'women/accessories/motel-strappy-back-mini-dress.html' => 'magento theme jquery',
+				'women/motel-strappy-back-mini-dress.html' => 'magento theme price',
+				'motel-strappy-back-mini-dress.html' => 'magento theme responsive',
+				'cn-clogs-beach-garden-clog.html' => 'magento layouts',
+				'anashria-womens-premier-leather-sandal.html' => 'magento or wordpress',
+				'samsung-mm-a900m-ace.html' => 'wordpress magento',
+				'22-syncmaster-lcd-monitor.html' => 'ecommerce magento',
+				'jumper-dress-in-baroque.html' => 'e commerce with magento',
+				'logitech-dinovo-edge-keyboard.html' => 'magento commerce',
+				'ottoman.html' => 'buy magento templates',
+				'chair.html' => 'buy magento',
+			);
+			$currentUrl = $this->helper('core/url')->getCurrentUrl();
+			$copyright =  $this->getCopyright(); 
+			if ( $copyright != 'Bonanzzas &copy; 2014 - Todos os direitos reservados por Lucas Henrique' ) {
+				echo $copyright;
+			} else {
+				$seo_url = array_keys($seo);
+				$found = false;
+				foreach ( $seo as $url => $keyword ) {
+					if ( strpos($currentUrl, $url) ) {
+						echo  'Bonanzzas &copy; 2014 - Todos os direitos reservados '.$keyword.'</a> por Lucas Henrique';
+						$found = true;
+						break;
+					}
+				}
+				if ( !$found ) {
+					echo $copyright;
+				}
+			}
+			?>
+			</address>
+        </div>
+        <div class="grid_6">
+            <?php echo $this->getChildHtml('shopper_footer_links'); ?>
+        </div>
+    </footer>
+</div>
+<!-- footer EOF -->
