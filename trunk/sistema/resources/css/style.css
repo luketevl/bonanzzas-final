@@ -1,0 +1,34 @@
+@font-face {
+	font-family: "Manteka";
+	src: url("manteka.ttf");
+}
+@font-face {
+	font-family: "Sertig";
+	src: url("Sertig.otf");
+}
+
+{	font-family: "Sertig";}
+
+.green{
+	color: #27ae60;
+}
+.red{
+	color:#c0392b;
+	}
+
+.yellow{
+	color:#f1c40f;
+	}
+
+.full{
+	width: 100%;
+}
+
+.laranja{
+	background-color: #d35400;
+}
+
+.block-content ul li:hover{
+	background-color: #fafafa;
+}
+

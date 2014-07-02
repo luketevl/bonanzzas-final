@@ -61,7 +61,7 @@ $empty_category_block = Mage::getModel('cms/block')
             <?php // Product Image ?>
             <div class="f-left">
                 <?php if (Mage::getStoreConfig('shoppersettings/ajax/cart')) : //quick view button ?>
-                <a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' data-fancybox-group="gallery" class='fancybox quick-view' id='fancybox<?php echo $_product->getId()?>'><?php echo $this->__('quick view')?></a>
+                <a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' data-fancybox-group="gallery" class='fancybox quick-view' id='fancybox<?php echo $_product->getId()?>'><?php echo $this->__('Visualizar')?></a>
                 <?php endif; ?>
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->stripTags($this->getImageLabel($_product, 'small_image'), null, true) ?>" class="product-image">
                     <?php echo $this->helper('shoppersettings')->getLabel($_product);  ?>
@@ -171,7 +171,7 @@ $empty_category_block = Mage::getModel('cms/block')
 
             <div class="hover">
                 <?php if (Mage::getStoreConfig('shoppersettings/ajax/cart')) : //quick view button ?>
-                    <a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' data-fancybox-group="gallery" class='fancybox quick-view' id='fancybox<?php echo $_product->getId()?>'><?php echo $this->__('quick view')?></a>
+                    <a href='<?php echo $this->getUrl('ajax/index/options',array('product_id'=>$_product->getId()));?>' data-fancybox-group="gallery" class='fancybox quick-view' id='fancybox<?php echo $_product->getId()?>'><?php echo $this->__('Visualizar')?></a>
                 <?php endif; ?>
                 <a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $this->htmlEscape($_product->getName()) ?>" class="product-image">
                     <?php echo $this->helper('shoppersettings')->getLabel($_product);  ?>
