@@ -9,16 +9,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 		<link rel="icon" href="../../lojavirtual/skin/frontend/shopper/default/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="../resources/css/normalize.css">
         <link rel="stylesheet" href="../resources/css/main.css">
         <link rel="stylesheet" href="../resources/css/bootstrap.css">
         <link rel="stylesheet" href="../resources/css/doc.css">
         <link rel="stylesheet" href="../resources/css/bootstrap.css.map">
+        <link rel="stylesheet" href="../resources/css/normalize.css">
+       <!-- 
+        
         <link rel="stylesheet" type="text/css" href="../resources/css/calendar.css" />
         <link rel="stylesheet" type="text/css" href="../resources/css/custom_1.css" />
-        <link rel="stylesheet" href="../resources/css/style.css">
+        -->
+       <link rel="stylesheet" href="../resources/css/style.css">
+       <!--   
 		<link rel="stylesheet" type="text/css" media="all" href="../../lojavirtual/skin/frontend/shopper/default/css/styles.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="../../lojavirtual/skin/frontend/shopper/default/css/local.css" />
+		-->
 		<link rel="stylesheet" type="text/css" media="all" href="../resources/css/reset.css" />
 		<link rel="stylesheet" type="text/css" media="all" href="../resources/css/trunk.css" />
 
@@ -39,6 +44,7 @@
         <script src="../resources/js/vendor/modernizr-2.7.1.min.js"></script>
         <script src="../resources/js/plugins.js"></script>
         <script src="../resources/js/main.js"></script>
+		<script src="../resources/js/funcoes.js"></script>
 
         <script src="../resources/js/modernizr.custom.63321.js"></script>
 		<!-- Scripts --> 

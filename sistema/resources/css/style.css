@@ -32,3 +32,11 @@
 	background-color: #fafafa;
 }
 
+/** ALTERACOES PARA CSS DO MAGENTO */
+	
+.block{
+	float: none ! important;
+}
+.header-section, .header-section > div, .header-section iframe{
+	height: 600px;
+}
