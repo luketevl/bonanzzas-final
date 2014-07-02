@@ -67,3 +67,10 @@ create table custom_ajuda(
 );
 
 
+create table custom_rede(
+	id int UNSIGNED primary key AUTO_INCREMENT not null,
+	id_cli int not null,
+	foreign key(id_cli) references customer_entity(id),
+	id_cli_vinculado int not null,
+	foreign key(id_cli_vinculado) references customer_entity(id)
+);
