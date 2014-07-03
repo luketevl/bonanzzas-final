@@ -15,7 +15,7 @@ require_once 'includes/head.php';
 
 	<nav class="slide">
 		<ul>
-			<li><a href="//" class="active">Inicio</a></li>
+			<li><a href="pagina_inicial" class="active">Inicio</a></li>
 			<li><a href="#">Cadastro</a></li>
 			<li><a href="#">Rede</a></li>
 			<li><a href="#">Extrato</a></li>
@@ -35,7 +35,7 @@ require_once 'includes/head.php';
 			<li class="header-section">
 				<p class="placefiller">
 					<div class="embed-responsive embed-responsive-4by3" style="width:100%;">
-					  <iframe class="embed-responsive-item" src="http://getbootstrap.com/components/" style="width:100%;" id="iframe_principal"></iframe>
+					  <iframe class="embed-responsive-item" src="pagina_inicial" style="width:100%;" id="iframe_principal"></iframe>
 					</div>
 				</p>
 			</li>
