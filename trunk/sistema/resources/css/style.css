@@ -40,3 +40,8 @@
 .header-section, .header-section > div, .header-section iframe{
 	height: 600px;
 }
+
+#myTabContent{
+	padding-top: 15px;
+	text-align: justify;
+}
