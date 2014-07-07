@@ -19,7 +19,15 @@ class Pagina_Inicial extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('pagina_inicial');
+		$e = new Empresa();
+		$dados = $e->get_empresa(1);
+		$this->parser->parse('pagina_inicial',$dados);
+	}
+
+	public function save_empresa(){
+		$dados = $_POST;
+		$e = new Empresa;
+		$e->salvar($dados);
 	}
 }
 
