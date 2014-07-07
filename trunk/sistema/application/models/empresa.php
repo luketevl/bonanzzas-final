@@ -63,14 +63,14 @@ class Empresa extends DataMapper {
 	//   Add validation requirements, such as 'required', for your fields.
 	// --------------------------------------------------------------------
 
-	var $validation = array(
+	/* var $validation = array(
 		'example' => array(
 			// example is required, and cannot be more than 120 characters long.
 			'rules' => array('required', 'max_length' => 120),
 			'label' => 'Example'
 		)
 	);
-
+*/
 	// --------------------------------------------------------------------
 	// Default Ordering
 	//   Uncomment this to always sort by 'name', then by
@@ -127,9 +127,17 @@ class Empresa extends DataMapper {
 	*/
 
 	public function salvar($dados){
-				echo "<pre>";print_r($dados);echo "</pre>";
-		$this->save($dados);
-		echo $this->check_last_query();
+		$this->id		 	 	= $dados['id'];
+		$this->nome_emp 	 	= $dados['nome_emp'];
+		$this->cpfcnpj_emp 		= $dados['cpfcnpj_emp'];
+		$this->endereco_emp 	= $dados['endereco_emp'];
+		$this->pais_emp 		= $dados['pais_emp'];
+		$this->banco_emp 		= $dados['banco_emp'];
+		$this->agencia_emp 		= $dados['agencia_emp'];
+		$this->conta_emp 		= $dados['conta_emp'];
+		$this->observacoes_emp 	= $dados['observacoes_emp'];
+		$this->save();
+		$this->check_last_query();
 	}
 
 	public function get_empresa($id){

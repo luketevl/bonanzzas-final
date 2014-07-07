@@ -1,7 +1,7 @@
 create table custom_empresa(
 	id int UNSIGNED primary key AUTO_INCREMENT not null,
 	nome_emp varchar(200) not null,
-	cpf/cnpj_emp varchar(18) null,
+	cpfcnpj_emp varchar(18) null,
 	endereco_emp text null,
 	conta_emp varchar(20) null,
 	agencia_emp varchar(20) null,

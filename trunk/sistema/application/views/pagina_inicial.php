@@ -35,7 +35,7 @@ require_once 'includes/head.php';
         
         <div class="input-group">
 		  <span class="input-group-addon">CPF/CNPJ</span>
-		  <input type="text" class="form-control" placeholder="CPF ou CNPJ"  readonly="true" name="cpf/cnpj_emp" value="{cpf/cnpj_emp}">
+		  <input type="text" class="form-control" placeholder="CPF ou CNPJ"  readonly="true" name="cpfcnpj_emp" value="{cpfcnpj_emp}">
 		</div>
 		
 		<div class="input-group">
