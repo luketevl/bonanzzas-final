@@ -191,6 +191,13 @@ if (defined('ENVIRONMENT'))
 		define('APPPATH', BASEPATH.$application_folder.'/');
 	}
 
+/* --------------------------------------------------------------------
+* LOAD THE DATAMAPPER BOOTSTRAP FILE
+* --------------------------------------------------------------------
+*/
+require_once APPPATH.'third_party/datamapper/bootstrap.php';
+
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE
@@ -200,12 +207,6 @@ if (defined('ENVIRONMENT'))
  *
  */
 require_once BASEPATH.'core/CodeIgniter.php';
-
-/* --------------------------------------------------------------------
-* LOAD THE DATAMAPPER BOOTSTRAP FILE
-* --------------------------------------------------------------------
-*/
-require_once APPPATH.'third_party/datamapper/bootstrap.php';
 
 
 /* End of file index.php */

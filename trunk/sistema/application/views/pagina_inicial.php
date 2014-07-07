@@ -26,25 +26,26 @@ require_once 'includes/head.php';
         <h3 class="panel-title">Dados Empresa</h3>
       </div>
       <div class="panel-body">
-        
+        <form action="pagina_inicial/save_empresa" method="POST" id="form_dados_empresa">
+        <input type="hidden" value="{id}" name="id">
         <div class="input-group">
 		  <span class="input-group-addon">Nome Empresa</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Nome da empresa" readonly="true" name="nome_emp" value="{nome_emp}">
 		</div>
         
         <div class="input-group">
 		  <span class="input-group-addon">CPF/CNPJ</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="CPF ou CNPJ"  readonly="true" name="cpf/cnpj_emp" value="{cpf/cnpj_emp}">
 		</div>
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Endereço</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Endereço" readonly="true" name="endereco_emp" value="{endereco_emp}">
 		</div> 
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Pais</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Pais" readonly="true"  name="pais_emp" value="{pais_emp}">
 		</div>
 		   
       </div>
@@ -59,17 +60,17 @@ require_once 'includes/head.php';
         
         <div class="input-group">
 		  <span class="input-group-addon">Banco</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Banco" readonly="true" name="banco_emp" value="{banco_emp}">
 		</div>
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Agência</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Agência"  readonly="true" name="agencia_emp" value="{agencia_emp}">
 		</div>
 		
         <div class="input-group">
 		  <span class="input-group-addon">Conta</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Conta"  readonly="true" name="conta_emp" value="{conta_emp}">
 		</div>
 		        
       </div>
@@ -84,14 +85,19 @@ require_once 'includes/head.php';
         
        <div class="input-group">
 		  <span class="input-group-addon">Observações</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Observações"  readonly="true" name="observacoes_emp" value="{observacoes_emp}">
 		</div>
 		        
       </div>
       
     </div>
-    
-        
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button type="submit" class="btn btn-primary" id="salvar">Salvar</button>
+        </div>
+    </div>
+        </form>
       </div>
       
       <div class="tab-pane fade" id="meupacote">
