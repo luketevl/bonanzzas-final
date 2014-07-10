@@ -19,12 +19,12 @@
  * @author		Phil DeJarnett
  * @link		http://www.overzealous.com
  */
-class Empresa extends DataMapper {
+class Acessos extends DataMapper {
 
 	// Uncomment and edit these two if the class has a model name that
 	//   doesn't convert properly using the inflector_helper.
 	// var $model = 'template';
-	 var $table = 'custom_empresa';
+	 var $table = 'custom_acessos';
 
 	// You can override the database connections with this option
 	// var $db_params = 'db_config_name';
@@ -127,21 +127,15 @@ class Empresa extends DataMapper {
 	*/
 
 	public function salvar($dados){
-		$this->id		 	 	= $dados['id'];
-		$this->nome_emp 	 	= $dados['nome_emp'];
-		$this->cpfcnpj_emp 		= $dados['cpfcnpj_emp'];
-		$this->endereco_emp 	= $dados['endereco_emp'];
-		$this->pais_emp 		= $dados['pais_emp'];
-		$this->banco_emp 		= $dados['banco_emp'];
-		$this->agencia_emp 		= $dados['agencia_emp'];
-		$this->conta_emp 		= $dados['conta_emp'];
-		$this->observacoes_emp 	= $dados['observacoes_emp'];
+		$this->ip 	 			= $dados['ip'];
+		$this->data_hora 		= $dados['data_hora'];
+		$this->navegador 		= $dados['navegador'];
 		$this->save();
 	}
 
-	public function get_empresa($id){
-		$this->where('id',$id)->get();
-		return $this->to_array();
+	public function get_acessos(){
+		$this->get();
+		return $this->all_to_array();
 	}
 
 }

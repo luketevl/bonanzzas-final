@@ -21,12 +21,12 @@ create table custom_acessos(
 	id int UNSIGNED primary key AUTO_INCREMENT not null,
 	ip varchar(30) not null,
 	data_hora datetime not null,
-	navegador varchar(55) null,
+	navegador varchar(55) null
 );
 
 create table custom_configuracoes(
 	id int UNSIGNED primary key AUTO_INCREMENT not null,
-	tipo_lado char(1) not null,
+	tipo_lado char(1) not null
 );
 
 create table custom_ticket_categoria(

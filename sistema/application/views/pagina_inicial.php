@@ -27,6 +27,7 @@ require_once 'includes/head.php';
       </div>
       <div class="panel-body">
         <form action="pagina_inicial/save_empresa" method="POST" id="form_dados_empresa">
+        {dados_empresa}
         <input type="hidden" value="{id}" name="id">
         <div class="input-group">
 		  <span class="input-group-addon">Nome Empresa</span>
@@ -40,7 +41,7 @@ require_once 'includes/head.php';
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Endereço</span>
-		  <input type="text" class="form-control" placeholder="Endereço" readonly="true" name="endereco_emp" value="{endereco_emp}">
+		  <input type="text" class="form-control" placeholder="Endere√ßo" readonly="true" name="endereco_emp" value="{endereco_emp}">
 		</div> 
 		
 		<div class="input-group">
@@ -65,7 +66,7 @@ require_once 'includes/head.php';
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Agência</span>
-		  <input type="text" class="form-control" placeholder="Agência"  readonly="true" name="agencia_emp" value="{agencia_emp}">
+		  <input type="text" class="form-control" placeholder="Ag√™ncia"  readonly="true" name="agencia_emp" value="{agencia_emp}">
 		</div>
 		
         <div class="input-group">
@@ -97,6 +98,8 @@ require_once 'includes/head.php';
           <button type="submit" class="btn btn-primary" id="salvar">Salvar</button>
         </div>
     </div>
+        {/dados_empresa}
+
         </form>
       </div>
       
@@ -110,32 +113,32 @@ require_once 'includes/head.php';
         
         <div class="input-group">
 		  <span class="input-group-addon">Data de Cadastro</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Data de Cadastro">
 		</div>
         
         <div class="input-group">
 		  <span class="input-group-addon">Ativo</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Aivo">
 		</div>
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Plano Escolhido</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Plano Escolhio">
 		</div> 
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Descrição</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Descricao">
 		</div>
 		   
 		<div class="input-group">
 		  <span class="input-group-addon">R$</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Valor">
 		</div>
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Pagamento</span>
-		  <input type="text" class="form-control" placeholder="Username">
+		  <input type="text" class="form-control" placeholder="Pagamento">
 		</div>
 		
 		<div class="form-group">
@@ -150,7 +153,20 @@ require_once 'includes/head.php';
       </div>
       
       <div class="tab-pane fade" id="meucombo">
-        <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+        <div class="content slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+		<ul class="responsive">
+			<li class="header-section">
+				<p class="placefiller">
+					<div class="embed-responsive embed-responsive-4by3" style="width:100%;">
+					  <iframe class="embed-responsive-item" src="../../lojavirtual/sales/order/history/" style="width:100%;"></iframe>
+					</div>
+				</p>
+			</li>
+			<li class="body-section">
+				<p class="placefiller"></p>
+			</li>
+			</ul>
+      </div>
       </div>
       
       <div class="tab-pane fade" id="ultimosacessos">
@@ -161,13 +177,18 @@ require_once 'includes/head.php';
         <thead>
           <tr>
             <th>IP</th>
-            <th>Data</th>
-            <th>Hora</th>
+            <th>Data / Hora</th>
+            <th>Navegador</th>
           </tr>
         </thead>
         <tbody>
+        {acessos}
           <tr>
+          <td>{ip}</td>
+          <td>{data_hora}</td>
+          <td>{navegador}</td>
           </tr>
+          {/acessos}
         </tbody>
       </table>
     </div>
@@ -175,6 +196,48 @@ require_once 'includes/head.php';
       </div>
       
       <div class="tab-pane fade" id="configuracoes">
-        <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+      <form action="pagina_inicial/save_configuracoes" method="POST" id="form_dados_empresa">
+      {dados_configuracoes}
+      <input type="hidden" value="{id}" name="id">
+    <div class="col-lg-3">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio" name="tipo_lado" value="D" {lado_direito}>
+      </span>
+      <input type="text" class="form-control" value="Direita" disabled>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+    <div class="col-lg-3">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio" name="tipo_lado" value="E" {lado_esquerdo}>
+      </span>
+      <input type="text" class="form-control" value="Esquerda" disabled>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+<div class="col-lg-3">
+    <div class="input-group">
+      <span class="input-group-addon">
+        <input type="radio" name="tipo_lado" value="B" {lado_balanco}>
+      </span>
+      <input type="text" class="form-control" value="Balanço" disabled>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
+
+
+
+
+  <div class="col-lg-3">
+    <div class="input-group">
+      
+        <button type="submit" class="btn btn-primary">Salvar</button>
+        {/dados_configuracoes}
+      </form>
+      
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+
       </div>
     </div>
