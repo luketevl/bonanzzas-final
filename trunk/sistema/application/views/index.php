@@ -10,7 +10,7 @@ require_once 'includes/head.php';
 		<ul id="navToggle" class="burger slide">    <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
 			<li></li><li></li><li></li>
 		</ul>
-		<h1>Escrit—rio Virtual</h1>
+		<h1>Escritï¿½rio Virtual</h1>
 	</header>
 
 	<nav class="slide">
@@ -23,7 +23,7 @@ require_once 'includes/head.php';
 			<li><a href="#">RelatÃ³rios</a></li>
 			<li><a href="#">Midia Digital</a></li>
 			<li><a href="../../lojavirtual/customer/account/index/">Meus Dados</a></li>
-			<li><a href="#">Comunicados</a></li>
+			<li><a href="ajuda">Comunicados</a></li>
 			<li><a href="../../lojavirtual/">Loja Virtual</a></li>
 			<li><a href="#">Parceiros</a></li>
 			<li><a href="#">Ajuda</a></li>

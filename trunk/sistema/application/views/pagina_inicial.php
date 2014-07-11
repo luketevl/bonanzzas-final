@@ -66,7 +66,7 @@ require_once 'includes/head.php';
 		
 		<div class="input-group">
 		  <span class="input-group-addon">Agência</span>
-		  <input type="text" class="form-control" placeholder="Ag√™ncia"  readonly="true" name="agencia_emp" value="{agencia_emp}">
+		  <input type="text" class="form-control" placeholder="Agencia"  readonly="true" name="agencia_emp" value="{agencia_emp}">
 		</div>
 		
         <div class="input-group">
@@ -104,7 +104,21 @@ require_once 'includes/head.php';
       </div>
       
       <div class="tab-pane fade" id="meupacote">
-        
+          <div class="content slide">     <!--	Add "slideRight" class to items that move right when viewing Nav Drawer  -->
+		<ul class="responsive">
+			<li class="header-section">
+				<p class="placefiller">
+					<div class="embed-responsive embed-responsive-4by3" style="width:100%;">
+					  <iframe class="embed-responsive-item" src="../../lojavirtual/sales/order/history/" style="width:100%;"></iframe>
+					</div>
+				</p>
+			</li>
+			<li class="body-section">
+				<p class="placefiller"></p>
+			</li>
+			</ul>
+      </div>
+        <!-- 
         <div class="panel panel-primary">
       <div class="panel-heading">
         <h3 class="panel-title">Dados</h3>
@@ -148,7 +162,7 @@ require_once 'includes/head.php';
 	  </div>
 		
       </div>
-    </div>
+    </div> -->
         
       </div>
       

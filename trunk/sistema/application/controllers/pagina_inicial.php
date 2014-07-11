@@ -22,7 +22,14 @@ class Pagina_Inicial extends CI_Controller {
 		$e = new Empresa();
 		$a = new Acessos();
 		$c = new Configuracoes();
+		$p = new Produtos();
 		$dados['dados_empresa'] = array($e->get_empresa(1));
+		/*
+		$tempIds			=	$p->get_id_produtos_by_categoria(1);
+		$dados['combos']	=	get_produtos_by_id($tempIds);
+		$tempIds			=	$p->get_id_produtos_by_categoria(2);
+		$dados['planos']	=	get_produtos_by_id($tempIds);
+		*/
 		$this->save_dados_acesso();
 		$dados['acessos'] = $a->get_acessos();
 		$dados['dados_configuracoes'] = array($c->get_configuracoes());
