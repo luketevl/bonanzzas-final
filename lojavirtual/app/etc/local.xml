@@ -39,6 +39,7 @@
                 <table_prefix><![CDATA[]]></table_prefix>
             </db>
             <default_setup>
+            <!--
                 <connection>
                     <host><![CDATA[mysqlrds.ceiuxagfbyao.us-west-2.rds.amazonaws.com]]></host>
                     <username><![CDATA[root]]></username>
@@ -48,6 +49,13 @@
                     <model><![CDATA[mysql4]]></model>
                     <type><![CDATA[pdo_mysql]]></type>
                     <pdoType><![CDATA[]]></pdoType>
+                    <active>1</active>
+                </connection> -->
+                <connection>
+                    <host><![CDATA[mysql.pagueecomprefacil.com]]></host>
+                    <username><![CDATA[pagueecomprefa01]]></username>
+                    <password><![CDATA[djfg48]]></password>
+                    <dbname><![CDATA[pagueecomprefa01]]></dbname>
                     <active>1</active>
                 </connection>
             </default_setup>
